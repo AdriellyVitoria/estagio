@@ -49,7 +49,7 @@ public class Main {
             System.out.println("Entrada inválida, digite SOMENTE um número inteiro maior que 0 e menor que " + ++limite + ".");
             return receber_quantidade_bicho(animal);
         } catch (NumberFormatException e) {
-            System.out.println("Entrada inválida, digite SOMENTE um número inteiro válido.");
+            System.out.println("Entrada inválida, digite SOMENTE um número inteiro maior que 0 e menor que " + ++limite + ".");
             return receber_quantidade_bicho(animal);
         }
         

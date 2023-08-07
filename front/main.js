@@ -1,14 +1,23 @@
+// olhar jogo do mario para fazer o enter click
+
 const quantidade_bicho = document.querySelector('#numero');
 const botao = document.querySelector('#botao');
 const exibir_musica = document.querySelector(`#musica`)
+const exibir_erro = document.querySelector('#entrada_invalida')
+
+const limite = 15;
 
 let animal = "Patinho";
 let som_do_bicho = "Quá, quá, quá, quá";
 let mamae = "Patinha";
 
+function limpa_input(){
+    quantidade_bicho.value = "";
+}
+
 botao.addEventListener('click', () => {
     exibir_musica.innerText = validacao(quantidade_bicho.value)
-    exibir_musica.innerText = cantar_musica(quantidade_bicho.value) 
+    limpa_input();
 })
 
 function cantar_musica(quantidade){
@@ -25,7 +34,7 @@ function cantar_musica(quantidade){
     }
 
     musica += `Poxa, a mamãe ${mamae} ficou tão triste naquele dia
-    Aonde será que estavam os seus filhotinhos?
+    Aonde será que ${quantidade_de_bicho_inicial == 1 ? "estava o seu filhotinho?" : "estavam os seus filhotinhos?"}
     Mas essa história vai ter um final feliz
     Sabe por quê?\n
     A mamãe ${mamae} foi procurar
@@ -34,13 +43,15 @@ function cantar_musica(quantidade){
     A mamãe gritou
     ${som_do_bicho}
     E ${quantidade_de_bicho_inicial} ${animal}
-    Voltaram de lá.`
+    ${quantidade_de_bicho_inicial == 1 ? "Voltou" : "Voltaram"} de lá.`
 
     return musica;
 }
 
 function validacao(entrada){
-    if(entrada > 0 & entrada <= 20){
-        console.log("Entrada inválida, digite SOMENTE um número inteiro válido e menor que 21.");
+    if(entrada <= 0 || entrada >= limite){
+        return `Entrada inválida.\n Por favor, Digite uma numero maio que 0 e menor que ${limite}.`;
+    } else {
+        return cantar_musica(quantidade_bicho.value);
     }
 }

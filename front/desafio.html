@@ -10,7 +10,8 @@
 
     <main>
         <img class="foto" src="fofo_patinho.jpg" alt="Foto de um patinho amarelo">
-        <input id="numero" type="number" placeholder="Digite a quantidade">
+        <input  type="number" id="numero" pattern="[0-9]+([,\.][0-9]+)?" min="0" step="1" max="14"
+        name="null" placeholder="Digite a quantidade">
         <button id="botao">Cantar</button>
         <p id="musica"></p>
         <p id="entrada_invalida"></p>

@@ -10,7 +10,7 @@ public class Main {
 
     public static void executar() throws InterruptedException {
         cantar_musica();
-        String continuar_cantando = querContinuar();
+        String continuar_cantando = validacao_desejar_continuar();
         if (continuar_cantando.equals("s")){
             executar();
         } else {
@@ -55,7 +55,7 @@ public class Main {
         
     }
 
-    public static String querContinuar() {
+    public static String validacao_desejar_continuar() {
         try {
             System.out.println("Deseja continuar: S-[Sim] N-[Não]");
             String resposta = in.nextLine().trim().toLowerCase();
@@ -63,10 +63,10 @@ public class Main {
                 return resposta;
             }
             System.out.println("Escolha uma opção válida!");
-            return querContinuar();
+            return validacao_desejar_continuar();
         } catch (Exception e) {
             System.out.println("Escolha uma opção válida!");
-            return querContinuar();
+            return validacao_desejar_continuar();
         }
     }
 }

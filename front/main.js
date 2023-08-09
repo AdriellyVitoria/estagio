@@ -6,7 +6,6 @@ const exibir_musica = document.querySelector(`#musica`)
 const exibir_erro = document.querySelector('#entrada_invalida')
 
 const limite = 15;
-
 let animal = "Patinho";
 let som_do_bicho = "Quá, quá, quá, quá";
 let mamae = "Patinha";
@@ -20,7 +19,8 @@ botao.addEventListener('click', () => {
     limpa_input();
 })
 
-function cantar_musica(quantidade){
+function cantar_musica(quantidade){ 
+    quantidade = Math.trunc(quantidade);
     const quantidade_de_bicho_inicial = quantidade;
     let musica = "";
     while (quantidade > 0){
@@ -42,8 +42,7 @@ function cantar_musica(quantidade){
     Na beira do mar
     A mamãe gritou
     ${som_do_bicho}
-    E ${quantidade_de_bicho_inicial} ${animal}
-    ${quantidade_de_bicho_inicial == 1 ? "Voltou" : "Voltaram"} de lá.`
+    E ${quantidade_de_bicho_inicial} ${animal}${quantidade_de_bicho_inicial == 1 ? "Voltou" : "s\nVoltaram"} de lá.`
 
     return musica;
 }
@@ -51,6 +50,7 @@ function cantar_musica(quantidade){
 function validacao(entrada){
     if(entrada <= 0 || entrada >= limite){
         return `Entrada inválida.\n Por favor, Digite uma numero maio que 0 e menor que ${limite}.`;
+
     } else {
         return cantar_musica(quantidade_bicho.value);
     }

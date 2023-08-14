@@ -1,5 +1,3 @@
-// olhar jogo do mario para fazer o enter click
-
 const quantidade_bicho = document.querySelector('#numero');
 const botao = document.querySelector('#botao');
 const exibir_musica = document.querySelector(`#musica`)

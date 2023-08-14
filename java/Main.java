@@ -34,16 +34,16 @@ public class Main {
             quantidade_de_bicho -= 1;
             System.out.println("Mas " + (quantidade_de_bicho == 0 ? "Nenhum" : "só " + quantidade_de_bicho ) +  " " + animal + (quantidade_de_bicho <= 1 ? "\nVoltou" : "s\nVoltaram") + " de lá.\n" ); 
         }         
-            Thread.sleep(2000);
-            
-            System.out.println("Poxa, a mamãe" + mamae +"ficou tão triste naquele dia\nAonde será que estavam os seus filhotinhos?\nMas essa história vai ter um final feliz\nSabe por quê?\n" +"\nA mamãe " + mamae + " foi procurar\nAlém das montanhas\nNa beira do mar\nA mamãe gritou\n" + som_do_animal+ "\nE "+ (quantidade_de_bicho_inicial == 1 ? "o " : "os ") + quantidade_de_bicho_inicial + " " + animal + (quantidade_de_bicho_inicial <= 1 ? "\nVoltou " : "s\nVoltaram ") + "de lá.\n" );
+        Thread.sleep(2000);
+        
+        System.out.println("Poxa, a mamãe " + mamae +" ficou tão triste naquele dia\nAonde será que estavam os seus filhotinhos?\nMas essa história vai ter um final feliz\nSabe por quê?\n" +"\nA mamãe " + mamae + " foi procurar\nAlém das montanhas\nNa beira do mar\nA mamãe gritou\n" + som_do_animal+ "\nE "+ (quantidade_de_bicho_inicial == 1 ? "o " : "os ") + quantidade_de_bicho_inicial + " " + animal + (quantidade_de_bicho_inicial <= 1 ? "\nVoltou " : "s\nVoltaram ") + "de lá.\n" );
     }    
 
     public static int receber_quantidade_bicho(String animal){
         try {
             System.out.println("Digite a quantidade de " + animal + "s: ");
             int quantidade_de_bicho = Integer.parseInt(in.nextLine().strip().replace(".", ""));
-            if(quantidade_de_bicho > 0 & quantidade_de_bicho <= limite){
+            if(quantidade_de_bicho > 0 && quantidade_de_bicho <= limite){
                 return quantidade_de_bicho;
             }
             System.out.println("Entrada inválida, digite SOMENTE um número inteiro maior que 0 e menor que " + ++limite + ".");
